@@ -5,8 +5,8 @@
   - changer le fichier 'database.php' (application/config/database.php) avec vos identifiants si nécessaire
 
 # Optionnel si vous voulez mettre votre compte stripe:
- - mettre votre clé "public" dans le fichier 'charge.js' (application/www/js/charge.js) -> var stripe = Stripe('votre clé'); (ligne: 3)
- - mettre votre clé "privée" dans le fichier 'ChargeController.class.php' (application/controllers/payment/charge/ChargeController.class.php) -> \Stripe\Stripe::setApiKey('votre clé'); (ligne: 48)
+ - mettre votre clé "publique" dans le fichier 'charge.js' (application/www/js/charge.js) -> var stripe = Stripe('votre clé'); (ligne: 3)
+ - mettre votre clé "secrète" dans le fichier 'ChargeController.class.php' (application/controllers/payment/charge/ChargeController.class.php) -> \Stripe\Stripe::setApiKey('votre clé'); (ligne: 48)
 
 # Informations à connaître:
   - compte admin:
