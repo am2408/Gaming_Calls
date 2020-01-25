@@ -105,6 +105,7 @@ if(window.location.href.indexOf('/products') != -1) {
 	console.log('products');
 }else if(window.location.href.indexOf('/basket') != -1) {
 	$('.basket').css('background','red');
+	$('.basket span').css('background','black');
 	$('.basket').css('color','black');
 	console.log('basket');
 }else if(window.location.href.indexOf('/profil') != -1) {

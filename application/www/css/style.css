@@ -108,6 +108,10 @@ h6{
   font-weight: normal;
 }
 
+button{
+  cursor: pointer;
+}
+
 .hide{
   display: none;
 }
@@ -375,13 +379,14 @@ ul.second-list li {
 .popUp button.closePopUp {
   width: 80%;
   margin: auto;
-  background-color: #fda30e;
+  background-color: red;
   color: white;
   margin-top: 10px;
   height: 42px;
   border-radius: 12px;
   padding-left: 3%;
   border: none;
+  font-family: xoloniumbold, sans-serif;
 }
 
 .access{
