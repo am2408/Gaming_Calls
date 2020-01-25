@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  sam. 25 jan. 2020 à 10:17
+-- Généré le :  sam. 25 jan. 2020 à 11:26
 -- Version du serveur :  5.7.26
 -- Version de PHP :  7.2.18
 
@@ -88,25 +88,6 @@ CREATE TABLE IF NOT EXISTS `orders` (
   PRIMARY KEY (`Id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=21 DEFAULT CHARSET=latin1;
 
---
--- Déchargement des données de la table `orders`
---
-
-INSERT INTO `orders` (`Id`, `User_Id`, `TaxRate`, `TaxAmount`, `TotalAmount`, `CreationTimestamp`, `CompleteTimestamp`) VALUES
-(14, 9, 20, 7590, 379.5, '2020-01-24 10:36:47', NULL),
-(13, 9, 20, 13990, 699.5, '2020-01-23 19:12:39', NULL),
-(12, 10, 20, 18000, 900, '2020-01-23 17:03:07', NULL),
-(11, 9, 20, 9000, 450, '2020-01-22 11:19:41', NULL),
-(10, 1, 20, 18000, 900, '2020-01-20 11:23:34', NULL),
-(9, 9, 20, 55000, 2750, '2020-01-17 14:20:09', '2020-01-24 17:17:14'),
-(8, 1, 20, 28000, 1400, '2020-01-17 10:36:37', '2020-01-24 14:52:28'),
-(15, 9, 20, 13990, 699.5, '2020-01-24 10:38:56', NULL),
-(16, 10, 20, 27980, 1399, '2020-01-24 10:40:18', NULL),
-(17, 10, 20, 15180, 759, '2020-01-24 10:58:06', NULL),
-(18, 9, 20, 4500, 225, '2020-01-24 14:52:28', NULL),
-(19, 9, 20, 13990, 699.5, '2020-01-24 17:17:14', NULL),
-(20, 10, 20, 27980, 1399, '2020-01-24 17:21:15', '2020-01-24 17:22:34');
-
 -- --------------------------------------------------------
 
 --
@@ -169,16 +150,16 @@ CREATE TABLE IF NOT EXISTS `users` (
   `Role_Plan` int(11) DEFAULT NULL,
   `CreationTimestamp` datetime NOT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `users`
 --
 
 INSERT INTO `users` (`Id`, `FirstName`, `LastName`, `Email`, `Pseudo`, `Password`, `Address`, `City`, `Zip`, `Role`, `Role_Plan`, `CreationTimestamp`) VALUES
-(1, 'Abmane', 'Oussoul', 'namaskar619@gmail.com', 'admin', '$2y$11$1cf67a5dea60152ac284fu.dmjXduH4H4JEW7C3vmtO/PI1mx9cAa', '05 avenue du nord', 'Paris', '75010', 'admin', NULL, '2019-12-26 16:53:31'),
-(9, 'Abdoul', 'MADEC', 'abdoul.m2408@gmail.com', 'AM2408', '$2y$11$67d19bc1925b6bb17b55eu473LpZftr9a7xC27HJWFpU0Ivq/l7km', '53 rue des marais', 'SEVRAN', '93270', 'pro', 10, '2020-01-16 11:44:45'),
-(10, 'Sidh', 'KHAN', 'sidh2408@gmail.com', 'Sidh', '$2y$11$7e06af135024cd832eb11Os33ncryHulqPMYuixtkSZ8Z0s7raFNW', '01 avenue nord', 'Karachi', '75010', 'user', NULL, '2020-01-22 14:03:40');
+(13, 'User', 'User', 'user@gmail.com', 'user', '$2y$11$04dd964f6d846e8772cc5uNtpHxId5qPLC9ggEn/un2twZAixgSZy', '01 avenue nord', 'Paris', '75010', 'user', NULL, '2020-01-25 11:37:14'),
+(12, 'Pro', 'User', 'pro.user@gmail.com', 'UserPro', '$2y$11$a121d1092036439e078dduNUF.jt/PTz4pEALj86K8SqCfG9s1/oG', '01 avenue nord', 'Paris', '75010', 'pro', 10, '2020-01-25 11:35:57'),
+(11, 'Admin', 'Admin', 'admin@gmail.com', 'admin', '$2y$11$1958ab224e3dce39fcedfefdKt4jrte6cqREB9cIhsZjC.1vc74HW', '01 rue de l\'admin', 'admin', '75010', 'admin', NULL, '2020-01-25 11:34:40');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
