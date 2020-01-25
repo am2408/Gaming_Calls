@@ -9,7 +9,7 @@
  - Mettre votre clé "secrète" dans le fichier 'ChargeController.class.php' (application/controllers/payment/charge/ChargeController.class.php) -> \Stripe\Stripe::setApiKey('votre clé'); (ligne: 48)
 
 # Informations à connaître:
-  - Compte admin:
+  - Compte admin (1 seul !):
     - Email: admin@gmail.com et Pseudo: admin
     - Mot de passe: admin
   - Compte pro:
