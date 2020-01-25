@@ -1,0 +1,56 @@
+<link rel="stylesheet" href="<?= $wwwUrl ?>/css/products/products.css">
+<main class="container">
+  <h2 class="title-section">Tous nos produits !</h2>
+  <div class="products">
+    <ul class="list">
+      <?php foreach($products as $product) {?>
+        <li class="product-mosaic">
+          <a href="<?= $requestUrl ?>/products/detail?productId=<?=$product['Id']?>">
+            <div>
+              <?php if (strlen($product['Name']) >= 20) { ?>
+                <h3><?=substr($product['Name'], 0, 20)?> ...</h3>
+              <?php } else{ ?>
+                <h3><?=$product['Name']?></h3>
+              <?php } ?>
+              <img src="<?= $wwwUrl?>/images/products/<?=$product['Photo']?>">
+              <p><?=substr($product['Description'], 0, 20)?> ...</p>
+              <?php if (array_key_exists('role', $_SESSION) === false){ ?>
+                <p>Prix Unitaire : <em><?=$product['Price']?> €</em></p>
+              <?php }else{ ?>
+                <?php if ($_SESSION['role'] === 'pro'){ ?>
+                  <p style="text-decoration: line-through; text-decoration-color: red;">Prix Unitaire : <em><?=$product['Price']?> €</em></p>
+                  <p>Prix Unitaire : <em><?=$product['Promo']?> €</em></p>
+                <?php }else{ ?>
+                  <p>Prix Unitaire : <em><?=$product['Price']?> €</em></p>
+                <?php }} ?>
+              </div>
+            </a>
+            <?php if (array_key_exists('role', $_SESSION) === false){ ?>
+              <p>Veuillez vous <a href="<?= $requestUrl ?>/users/login">connecter</a> afin de pouvoir accéder à cette fonctionnalité</p>
+            <?php }else{ ?>
+              <form>
+                <input type="text" name="quantity" id="product-<?=$product['Id']?>">
+                <?php if ($_SESSION['role'] === 'pro'){ ?>
+                  <button class="addToBasket" data-name="<?=$product['Name']?>" data-price="<?=$product['Promo']?>" data-id="<?=$product['Id']?>">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <p>Ajouter au panier</p>
+                  </button>
+                <?php }else{ ?>
+                  <button class="addToBasket" data-name="<?=$product['Name']?>" data-price="<?=$product['Price']?>" data-id="<?=$product['Id']?>">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <p>Ajouter au panier</p>
+                  </button>
+                <?php } ?>
+              </form>
+            <?php } ?>
+          </li>
+        <?php }?>
+      </ul>
+    </div>
+</main>

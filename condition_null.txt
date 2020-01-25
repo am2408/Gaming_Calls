@@ -1,0 +1,501 @@
+    if (empty($files["product_pics"]["name"])) {
+      $database = new Database();
+      $database->executeSql("INSERT INTO products (Name, Photo, Horseman, Phone_Left, Screen, Phone_Right, Light, Logo, Gpu, Icon1, Icon2, Icon3, Icon1_Des, Icon2_Des, Icon3_Des, Description, QuantityInStock, BuyPrice, Price)
+      VALUES (?, NULL,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)", [
+      $_post["name"],
+      $_file["product_hors"]["name"],
+      $_file["product_left"]["name"],
+      $_file["product_screen"]["name"],
+      $_file["product_right"]["name"],
+      $_file["product_light"]["name"],
+      $_file["product_logo"]["name"],
+      $_file["product_gpu"]["name"],
+      $_file["product_icon1"]["name"],
+      $_file["product_icon2"]["name"],
+      $_file["product_icon3"]["name"],
+      $_post["icon1des"],
+      $_post["icon2des"],
+      $_post["icon3des"],
+      $_post["description"],
+      $_post["quantity"],
+      $_post["buyPrice"],
+      $_post["price"]
+      ]);
+    }else if (empty($files["product_pics"]["name"]) && empty($files["product_hors"]["name"])) {
+      $database = new Database();
+      $database->executeSql("INSERT INTO products (Name, Photo, Horseman, Phone_Left, Screen, Phone_Right, Light, Logo, Gpu, Icon1, Icon2, Icon3, Icon1_Des, Icon2_Des, Icon3_Des, Description, QuantityInStock, BuyPrice, Price)
+      VALUES (?, NULL,NULL,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)", [
+      $_post["name"],
+      $_file["product_left"]["name"],
+      $_file["product_screen"]["name"],
+      $_file["product_right"]["name"],
+      $_file["product_light"]["name"],
+      $_file["product_logo"]["name"],
+      $_file["product_gpu"]["name"],
+      $_file["product_icon1"]["name"],
+      $_file["product_icon2"]["name"],
+      $_file["product_icon3"]["name"],
+      $_post["icon1des"],
+      $_post["icon2des"],
+      $_post["icon3des"],
+      $_post["description"],
+      $_post["quantity"],
+      $_post["buyPrice"],
+      $_post["price"]
+      ]);
+    }else if (empty($files["product_pics"]["name"]) && empty($files["product_hors"]["name"]) && empty($files["product_left"]["name"])) {
+      $database = new Database();
+      $database->executeSql("INSERT INTO products (Name, Photo, Horseman, Phone_Left, Screen, Phone_Right, Light, Logo, Gpu, Icon1, Icon2, Icon3, Icon1_Des, Icon2_Des, Icon3_Des, Description, QuantityInStock, BuyPrice, Price)
+      VALUES (?, NULL,NULL,NULL,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)", [
+      $_post["name"],
+      $_file["product_screen"]["name"],
+      $_file["product_right"]["name"],
+      $_file["product_light"]["name"],
+      $_file["product_logo"]["name"],
+      $_file["product_gpu"]["name"],
+      $_file["product_icon1"]["name"],
+      $_file["product_icon2"]["name"],
+      $_file["product_icon3"]["name"],
+      $_post["icon1des"],
+      $_post["icon2des"],
+      $_post["icon3des"],
+      $_post["description"],
+      $_post["quantity"],
+      $_post["buyPrice"],
+      $_post["price"]
+      ]);
+    }else if (empty($files["product_pics"]["name"]) && empty($files["product_hors"]["name"]) && empty($files["product_left"]["name"]) && empty($files["product_screen"]["name"])) {
+      $database = new Database();
+      $database->executeSql("INSERT INTO products (Name, Photo, Horseman, Phone_Left, Screen, Phone_Right, Light, Logo, Gpu, Icon1, Icon2, Icon3, Icon1_Des, Icon2_Des, Icon3_Des, Description, QuantityInStock, BuyPrice, Price)
+      VALUES (?, NULL,NULL,NULL,NULL,?,?,?,?,?,?,?,?,?,?,?,?,?,?)", [
+      $_post["name"],
+      $_file["product_right"]["name"],
+      $_file["product_light"]["name"],
+      $_file["product_logo"]["name"],
+      $_file["product_gpu"]["name"],
+      $_file["product_icon1"]["name"],
+      $_file["product_icon2"]["name"],
+      $_file["product_icon3"]["name"],
+      $_post["icon1des"],
+      $_post["icon2des"],
+      $_post["icon3des"],
+      $_post["description"],
+      $_post["quantity"],
+      $_post["buyPrice"],
+      $_post["price"]
+      ]);
+    }else if (empty($files["product_pics"]["name"]) && empty($files["product_hors"]["name"]) && empty($files["product_left"]["name"]) && empty($files["product_screen"]["name"]) && empty($files["product_right"]["name"])) {
+      $database = new Database();
+      $database->executeSql("INSERT INTO products (Name, Photo, Horseman, Phone_Left, Screen, Phone_Right, Light, Logo, Gpu, Icon1, Icon2, Icon3, Icon1_Des, Icon2_Des, Icon3_Des, Description, QuantityInStock, BuyPrice, Price)
+      VALUES (?, NULL,NULL,NULL,NULL,NULL,?,?,?,?,?,?,?,?,?,?,?,?,?)", [
+      $_post["name"],
+      $_file["product_light"]["name"],
+      $_file["product_logo"]["name"],
+      $_file["product_gpu"]["name"],
+      $_file["product_icon1"]["name"],
+      $_file["product_icon2"]["name"],
+      $_file["product_icon3"]["name"],
+      $_post["icon1des"],
+      $_post["icon2des"],
+      $_post["icon3des"],
+      $_post["description"],
+      $_post["quantity"],
+      $_post["buyPrice"],
+      $_post["price"]
+      ]);
+    }else if (empty($files["product_pics"]["name"]) && empty($files["product_hors"]["name"]) && empty($files["product_left"]["name"]) && empty($files["product_screen"]["name"]) && empty($files["product_right"]["name"]) && empty($files["product_light"]["name"])) {
+      $database = new Database();
+      $database->executeSql("INSERT INTO products (Name, Photo, Horseman, Phone_Left, Screen, Phone_Right, Light, Logo, Gpu, Icon1, Icon2, Icon3, Icon1_Des, Icon2_Des, Icon3_Des, Description, QuantityInStock, BuyPrice, Price)
+      VALUES (?, NULL,NULL,NULL,NULL,NULL,NULL,?,?,?,?,?,?,?,?,?,?,?,?)", [
+      $_post["name"],
+      $_file["product_logo"]["name"],
+      $_file["product_gpu"]["name"],
+      $_file["product_icon1"]["name"],
+      $_file["product_icon2"]["name"],
+      $_file["product_icon3"]["name"],
+      $_post["icon1des"],
+      $_post["icon2des"],
+      $_post["icon3des"],
+      $_post["description"],
+      $_post["quantity"],
+      $_post["buyPrice"],
+      $_post["price"]
+      ]);
+    }else if (empty($files["product_pics"]["name"]) && empty($files["product_hors"]["name"]) && empty($files["product_left"]["name"]) && empty($files["product_screen"]["name"]) && empty($files["product_right"]["name"]) && empty($files["product_light"]["name"]) && empty($files["product_logo"]["name"])) {
+      $database = new Database();
+      $database->executeSql("INSERT INTO products (Name, Photo, Horseman, Phone_Left, Screen, Phone_Right, Light, Logo, Gpu, Icon1, Icon2, Icon3, Icon1_Des, Icon2_Des, Icon3_Des, Description, QuantityInStock, BuyPrice, Price)
+      VALUES (?, NULL,NULL,NULL,NULL,NULL,NULL,NULL,?,?,?,?,?,?,?,?,?,?,?)", [
+      $_post["name"],
+      $_file["product_gpu"]["name"],
+      $_file["product_icon1"]["name"],
+      $_file["product_icon2"]["name"],
+      $_file["product_icon3"]["name"],
+      $_post["icon1des"],
+      $_post["icon2des"],
+      $_post["icon3des"],
+      $_post["description"],
+      $_post["quantity"],
+      $_post["buyPrice"],
+      $_post["price"]
+      ]);
+    }else if (empty($files["product_pics"]["name"]) && empty($files["product_hors"]["name"]) && empty($files["product_left"]["name"]) && empty($files["product_screen"]["name"]) && empty($files["product_right"]["name"]) && empty($files["product_light"]["name"]) && empty($files["product_logo"]["name"]) && empty($files["product_gpu"]["name"])) {
+      $database = new Database();
+      $database->executeSql("INSERT INTO products (Name, Photo, Horseman, Phone_Left, Screen, Phone_Right, Light, Logo, Gpu, Icon1, Icon2, Icon3, Icon1_Des, Icon2_Des, Icon3_Des, Description, QuantityInStock, BuyPrice, Price)
+      VALUES (?, NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,?,?,?,?,?,?,?,?,?,?)", [
+      $_post["name"],
+      $_file["product_icon1"]["name"],
+      $_file["product_icon2"]["name"],
+      $_file["product_icon3"]["name"],
+      $_post["icon1des"],
+      $_post["icon2des"],
+      $_post["icon3des"],
+      $_post["description"],
+      $_post["quantity"],
+      $_post["buyPrice"],
+      $_post["price"]
+      ]);
+    }else if (empty($files["product_pics"]["name"]) && empty($files["product_hors"]["name"]) && empty($files["product_left"]["name"]) && empty($files["product_screen"]["name"]) && empty($files["product_right"]["name"]) && empty($files["product_light"]["name"]) && empty($files["product_logo"]["name"]) && empty($files["product_gpu"]["name"]) && empty($files["product_icon1"]["name"])) {
+      $database = new Database();
+      $database->executeSql("INSERT INTO products (Name, Photo, Horseman, Phone_Left, Screen, Phone_Right, Light, Logo, Gpu, Icon1, Icon2, Icon3, Icon1_Des, Icon2_Des, Icon3_Des, Description, QuantityInStock, BuyPrice, Price)
+      VALUES (?, NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,?,?,NULL,?,?,?,?,?,?)", [
+      $_post["name"],
+      $_file["product_icon2"]["name"],
+      $_file["product_icon3"]["name"],
+      $_post["icon2des"],
+      $_post["icon3des"],
+      $_post["description"],
+      $_post["quantity"],
+      $_post["buyPrice"],
+      $_post["price"]
+      ]);
+    }else if (empty($files["product_pics"]["name"]) && empty($files["product_hors"]["name"]) && empty($files["product_left"]["name"]) && empty($files["product_screen"]["name"]) && empty($files["product_right"]["name"]) && empty($files["product_light"]["name"]) && empty($files["product_logo"]["name"]) && empty($files["product_gpu"]["name"]) && empty($files["product_icon1"]["name"]) && empty($files["product_icon2"]["name"])) {
+      $database = new Database();
+      $database->executeSql("INSERT INTO products (Name, Photo, Horseman, Phone_Left, Screen, Phone_Right, Light, Logo, Gpu, Icon1, Icon2, Icon3, Icon1_Des, Icon2_Des, Icon3_Des, Description, QuantityInStock, BuyPrice, Price)
+      VALUES (?, NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,?,NULL,NULL,?,?,?,?,?)", [
+      $_post["name"],
+      $_file["product_icon3"]["name"],
+      $_post["icon3des"],
+      $_post["description"],
+      $_post["quantity"],
+      $_post["buyPrice"],
+      $_post["price"]
+      ]);
+    }else if (empty($files["product_pics"]["name"]) && empty($files["product_hors"]["name"]) && empty($files["product_left"]["name"]) && empty($files["product_screen"]["name"]) && empty($files["product_right"]["name"]) && empty($files["product_light"]["name"]) && empty($files["product_logo"]["name"]) && empty($files["product_gpu"]["name"]) && empty($files["product_icon1"]["name"]) && empty($files["product_icon2"]["name"]) && empty($files["product_icon3"]["name"])) {
+      $database = new Database();
+      $database->executeSql("INSERT INTO products (Name, Photo, Horseman, Phone_Left, Screen, Phone_Right, Light, Logo, Gpu, Icon1, Icon2, Icon3, Icon1_Des, Icon2_Des, Icon3_Des, Description, QuantityInStock, BuyPrice, Price)
+      VALUES (?, NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,?,?,?,?)", [
+      $_post["name"],
+      $_post["description"],
+      $_post["quantity"],
+      $_post["buyPrice"],
+      $_post["price"]
+      ]);
+    }else if (empty($files["product_pics"]["name"]) && empty($files["product_left"]["name"]) && empty($files["product_screen"]["name"]) && empty($files["product_right"]["name"]) && empty($files["product_light"]["name"]) && empty($files["product_logo"]["name"]) && empty($files["product_gpu"]["name"]) && empty($files["product_icon1"]["name"]) && empty($files["product_icon2"]["name"]) && empty($files["product_icon3"]["name"])) {
+      $database = new Database();
+      $database->executeSql("INSERT INTO products (Name, Photo, Horseman, Phone_Left, Screen, Phone_Right, Light, Logo, Gpu, Icon1, Icon2, Icon3, Icon1_Des, Icon2_Des, Icon3_Des, Description, QuantityInStock, BuyPrice, Price)
+      VALUES (?, NULL,?,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,?,?,?,?)", [
+      $_post["name"],
+      $files["product_hors"]["name"],
+      $_post["description"],
+      $_post["quantity"],
+      $_post["buyPrice"],
+      $_post["price"]
+      ]);
+    }else if (empty($files["product_pics"]["name"]) && empty($files["product_hors"]["name"]) && empty($files["product_screen"]["name"]) && empty($files["product_right"]["name"]) && empty($files["product_light"]["name"]) && empty($files["product_logo"]["name"]) && empty($files["product_gpu"]["name"]) && empty($files["product_icon1"]["name"]) && empty($files["product_icon2"]["name"]) && empty($files["product_icon3"]["name"])) {
+      $database = new Database();
+      $database->executeSql("INSERT INTO products (Name, Photo, Horseman, Phone_Left, Screen, Phone_Right, Light, Logo, Gpu, Icon1, Icon2, Icon3, Icon1_Des, Icon2_Des, Icon3_Des, Description, QuantityInStock, BuyPrice, Price)
+      VALUES (?, NULL,NULL,?,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,?,?,?,?)", [
+      $_post["name"],
+      $files["product_left"]["name"],
+      $_post["description"],
+      $_post["quantity"],
+      $_post["buyPrice"],
+      $_post["price"]
+      ]);
+    }else if (empty($files["product_pics"]["name"]) && empty($files["product_hors"]["name"]) && empty($files["product_left"]["name"]) && empty($files["product_right"]["name"]) && empty($files["product_light"]["name"]) && empty($files["product_logo"]["name"]) && empty($files["product_gpu"]["name"]) && empty($files["product_icon1"]["name"]) && empty($files["product_icon2"]["name"]) && empty($files["product_icon3"]["name"])) {
+      $database = new Database();
+      $database->executeSql("INSERT INTO products (Name, Photo, Horseman, Phone_Left, Screen, Phone_Right, Light, Logo, Gpu, Icon1, Icon2, Icon3, Icon1_Des, Icon2_Des, Icon3_Des, Description, QuantityInStock, BuyPrice, Price)
+      VALUES (?, NULL,NULL,NULL,?,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,?,?,?,?)", [
+      $_post["name"],
+      $files["product_screen"]["name"],
+      $_post["description"],
+      $_post["quantity"],
+      $_post["buyPrice"],
+      $_post["price"]
+      ]);
+    }else if (empty($files["product_pics"]["name"]) && empty($files["product_hors"]["name"]) && empty($files["product_left"]["name"]) && empty($files["product_screen"]["name"]) && empty($files["product_right"]["name"]) && empty($files["product_light"]["name"]) && empty($files["product_logo"]["name"]) && empty($files["product_gpu"]["name"]) && empty($files["product_icon1"]["name"]) && empty($files["product_icon2"]["name"]) && empty($files["product_icon3"]["name"])) {
+      $database = new Database();
+      $database->executeSql("INSERT INTO products (Name, Photo, Horseman, Phone_Left, Screen, Phone_Right, Light, Logo, Gpu, Icon1, Icon2, Icon3, Icon1_Des, Icon2_Des, Icon3_Des, Description, QuantityInStock, BuyPrice, Price)
+      VALUES (?, NULL,NULL,NULL,NULL,?,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,?,?,?,?)", [
+      $_post["name"],
+      $files["product_right"]["name"],
+      $_post["description"],
+      $_post["quantity"],
+      $_post["buyPrice"],
+      $_post["price"]
+      ]);
+    }else if (empty($files["product_pics"]["name"]) && empty($files["product_hors"]["name"]) && empty($files["product_left"]["name"]) && empty($files["product_screen"]["name"]) && empty($files["product_right"]["name"]) && empty($files["product_logo"]["name"]) && empty($files["product_gpu"]["name"]) && empty($files["product_icon1"]["name"]) && empty($files["product_icon2"]["name"]) && empty($files["product_icon3"]["name"])) {
+      $database = new Database();
+      $database->executeSql("INSERT INTO products (Name, Photo, Horseman, Phone_Left, Screen, Phone_Right, Light, Logo, Gpu, Icon1, Icon2, Icon3, Icon1_Des, Icon2_Des, Icon3_Des, Description, QuantityInStock, BuyPrice, Price)
+      VALUES (?, NULL,NULL,NULL,NULL,NULL,?,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,?,?,?,?)", [
+      $_post["name"],
+      $files["product_light"]["name"],
+      $_post["description"],
+      $_post["quantity"],
+      $_post["buyPrice"],
+      $_post["price"]
+      ]);
+    }else if (empty($files["product_pics"]["name"]) && empty($files["product_hors"]["name"]) && empty($files["product_left"]["name"]) && empty($files["product_screen"]["name"]) && empty($files["product_right"]["name"]) && empty($files["product_light"]["name"]) && empty($files["product_gpu"]["name"]) && empty($files["product_icon1"]["name"]) && empty($files["product_icon2"]["name"]) && empty($files["product_icon3"]["name"])) {
+      $database = new Database();
+      $database->executeSql("INSERT INTO products (Name, Photo, Horseman, Phone_Left, Screen, Phone_Right, Light, Logo, Gpu, Icon1, Icon2, Icon3, Icon1_Des, Icon2_Des, Icon3_Des, Description, QuantityInStock, BuyPrice, Price)
+      VALUES (?, NULL,NULL,NULL,NULL,NULL,NULL,?,NULL,NULL,NULL,NULL,NULL,NULL,NULL,?,?,?,?)", [
+      $_post["name"],
+      $files["product_logo"]["name"],
+      $_post["description"],
+      $_post["quantity"],
+      $_post["buyPrice"],
+      $_post["price"]
+      ]);
+    }else if (empty($files["product_pics"]["name"]) && empty($files["product_hors"]["name"]) && empty($files["product_left"]["name"]) && empty($files["product_screen"]["name"]) && empty($files["product_right"]["name"]) && empty($files["product_light"]["name"]) && empty($files["product_logo"]["name"]) && empty($files["product_icon1"]["name"]) && empty($files["product_icon2"]["name"]) && empty($files["product_icon3"]["name"])) {
+      $database = new Database();
+      $database->executeSql("INSERT INTO products (Name, Photo, Horseman, Phone_Left, Screen, Phone_Right, Light, Logo, Gpu, Icon1, Icon2, Icon3, Icon1_Des, Icon2_Des, Icon3_Des, Description, QuantityInStock, BuyPrice, Price)
+      VALUES (?, NULL,NULL,NULL,NULL,NULL,NULL,?,NULL,NULL,NULL,NULL,NULL,NULL,NULL,?,?,?,?)", [
+      $_post["name"],
+      $files["product_gpu"]["name"],
+      $_post["description"],
+      $_post["quantity"],
+      $_post["buyPrice"],
+      $_post["price"]
+      ]);
+    }else if (empty($files["product_pics"]["name"]) && empty($files["product_hors"]["name"]) && empty($files["product_left"]["name"]) && empty($files["product_screen"]["name"]) && empty($files["product_right"]["name"]) && empty($files["product_light"]["name"]) && empty($files["product_logo"]["name"]) && empty($files["product_gpu"]["name"]) && empty($files["product_icon2"]["name"]) && empty($files["product_icon3"]["name"])) {
+      $database = new Database();
+      $database->executeSql("INSERT INTO products (Name, Photo, Horseman, Phone_Left, Screen, Phone_Right, Light, Logo, Gpu, Icon1, Icon2, Icon3, Icon1_Des, Icon2_Des, Icon3_Des, Description, QuantityInStock, BuyPrice, Price)
+      VALUES (?, NULL,NULL,NULL,NULL,NULL,NULL,NULL,?,NULL,NULL,?,NULL,NULL,NULL,?,?,?,?)", [
+      $_post["name"],
+      $files["product_icon1"]["name"],
+      $_post["icon1des"],
+      $_post["description"],
+      $_post["quantity"],
+      $_post["buyPrice"],
+      $_post["price"]
+      ]);
+    }else if (empty($files["product_pics"]["name"]) && empty($files["product_hors"]["name"]) && empty($files["product_left"]["name"]) && empty($files["product_screen"]["name"]) && empty($files["product_right"]["name"]) && empty($files["product_light"]["name"]) && empty($files["product_logo"]["name"]) && empty($files["product_gpu"]["name"]) && empty($files["product_icon1"]["name"]) && empty($files["product_icon3"]["name"])) {
+      $database = new Database();
+      $database->executeSql("INSERT INTO products (Name, Photo, Horseman, Phone_Left, Screen, Phone_Right, Light, Logo, Gpu, Icon1, Icon2, Icon3, Icon1_Des, Icon2_Des, Icon3_Des, Description, QuantityInStock, BuyPrice, Price)
+      VALUES (?, NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,?,NULL,NULL,?,NULL,NULL,?,?,?,?)", [
+      $_post["name"],
+      $files["product_icon2"]["name"],
+      $_post["icon2des"],
+      $_post["description"],
+      $_post["quantity"],
+      $_post["buyPrice"],
+      $_post["price"]
+      ]);
+    }else if (empty($files["product_pics"]["name"]) && empty($files["product_hors"]["name"]) && empty($files["product_left"]["name"]) && empty($files["product_screen"]["name"]) && empty($files["product_right"]["name"]) && empty($files["product_light"]["name"]) && empty($files["product_logo"]["name"]) && empty($files["product_gpu"]["name"]) && empty($files["product_icon1"]["name"]) && empty($files["product_icon2"]["name"])) {
+      $database = new Database();
+      $database->executeSql("INSERT INTO products (Name, Photo, Horseman, Phone_Left, Screen, Phone_Right, Light, Logo, Gpu, Icon1, Icon2, Icon3, Icon1_Des, Icon2_Des, Icon3_Des, Description, QuantityInStock, BuyPrice, Price)
+      VALUES (?, NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,?,NULL,NULL,?,?,?,?,?)", [
+      $_post["name"],
+      $files["product_icon3"]["name"],
+      $_post["icon3des"],
+      $_post["description"],
+      $_post["quantity"],
+      $_post["buyPrice"],
+      $_post["price"]
+      ]);
+    }else if (empty($files["product_pics"]["name"]) && empty($_file["product_left"]["name"])) {
+      $database = new Database();
+      $database->executeSql("INSERT INTO products (Name, Photo, Horseman, Phone_Left, Screen, Phone_Right, Light, Logo, Gpu, Icon1, Icon2, Icon3, Icon1_Des, Icon2_Des, Icon3_Des, Description, QuantityInStock, BuyPrice, Price)
+      VALUES (?, NULL,?,NULL,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)", [
+      $_post["name"],
+      $files["product_hors"]["name"],
+      $_file["product_screen"]["name"],
+      $_file["product_right"]["name"],
+      $_file["product_light"]["name"],
+      $_file["product_logo"]["name"],
+      $_file["product_gpu"]["name"],
+      $_file["product_icon1"]["name"],
+      $_file["product_icon2"]["name"],
+      $_file["product_icon3"]["name"],
+      $_post["icon1des"],
+      $_post["icon2des"],
+      $_post["icon3des"],
+      $_post["description"],
+      $_post["quantity"],
+      $_post["buyPrice"],
+      $_post["price"]
+      ]);
+    }else if (empty($files["product_pics"]["name"]) && empty($_file["product_screen"]["name"])) {
+      $database = new Database();
+      $database->executeSql("INSERT INTO products (Name, Photo, Horseman, Phone_Left, Screen, Phone_Right, Light, Logo, Gpu, Icon1, Icon2, Icon3, Icon1_Des, Icon2_Des, Icon3_Des, Description, QuantityInStock, BuyPrice, Price)
+      VALUES (?, NULL,?,?,NULL,?,?,?,?,?,?,?,?,?,?,?,?,?,?)", [
+      $_post["name"],
+      $files["product_hors"]["name"],
+      $_file["product_left"]["name"],
+      $_file["product_right"]["name"],
+      $_file["product_light"]["name"],
+      $_file["product_logo"]["name"],
+      $_file["product_gpu"]["name"],
+      $_file["product_icon1"]["name"],
+      $_file["product_icon2"]["name"],
+      $_file["product_icon3"]["name"],
+      $_post["icon1des"],
+      $_post["icon2des"],
+      $_post["icon3des"],
+      $_post["description"],
+      $_post["quantity"],
+      $_post["buyPrice"],
+      $_post["price"]
+      ]);
+    }else if (empty($files["product_pics"]["name"]) && empty($_file["product_right"]["name"])) {
+      $database = new Database();
+      $database->executeSql("INSERT INTO products (Name, Photo, Horseman, Phone_Left, Screen, Phone_Right, Light, Logo, Gpu, Icon1, Icon2, Icon3, Icon1_Des, Icon2_Des, Icon3_Des, Description, QuantityInStock, BuyPrice, Price)
+      VALUES (?, NULL,?,?,?,NULL,?,?,?,?,?,?,?,?,?,?,?,?,?)", [
+      $_post["name"],
+      $files["product_hors"]["name"],
+      $_file["product_left"]["name"],
+      $_file["product_screen"]["name"],
+      $_file["product_light"]["name"],
+      $_file["product_logo"]["name"],
+      $_file["product_gpu"]["name"],
+      $_file["product_icon1"]["name"],
+      $_file["product_icon2"]["name"],
+      $_file["product_icon3"]["name"],
+      $_post["icon1des"],
+      $_post["icon2des"],
+      $_post["icon3des"],
+      $_post["description"],
+      $_post["quantity"],
+      $_post["buyPrice"],
+      $_post["price"]
+      ]);
+    }else if (empty($files["product_pics"]["name"]) && empty($_file["product_light"]["name"])) {
+      $database = new Database();
+      $database->executeSql("INSERT INTO products (Name, Photo, Horseman, Phone_Left, Screen, Phone_Right, Light, Logo, Gpu, Icon1, Icon2, Icon3, Icon1_Des, Icon2_Des, Icon3_Des, Description, QuantityInStock, BuyPrice, Price)
+      VALUES (?, NULL,?,?,?,?,NULL,?,?,?,?,?,?,?,?,?,?,?,?)", [
+      $_post["name"],
+      $files["product_hors"]["name"],
+      $_file["product_left"]["name"],
+      $_file["product_screen"]["name"],
+      $_file["product_right"]["name"],
+      $_file["product_logo"]["name"],
+      $_file["product_gpu"]["name"],
+      $_file["product_icon1"]["name"],
+      $_file["product_icon2"]["name"],
+      $_file["product_icon3"]["name"],
+      $_post["icon1des"],
+      $_post["icon2des"],
+      $_post["icon3des"],
+      $_post["description"],
+      $_post["quantity"],
+      $_post["buyPrice"],
+      $_post["price"]
+      ]);
+    }else if (empty($files["product_pics"]["name"]) && empty($_file["product_logo"]["name"])) {
+      $database = new Database();
+      $database->executeSql("INSERT INTO products (Name, Photo, Horseman, Phone_Left, Screen, Phone_Right, Light, Logo, Gpu, Icon1, Icon2, Icon3, Icon1_Des, Icon2_Des, Icon3_Des, Description, QuantityInStock, BuyPrice, Price)
+      VALUES (?, NULL,?,?,?,?,?,NULL,?,?,?,?,?,?,?,?,?,?,?)", [
+      $_post["name"],
+      $files["product_hors"]["name"],
+      $_file["product_left"]["name"],
+      $_file["product_screen"]["name"],
+      $_file["product_right"]["name"],
+      $_file["product_light"]["name"],
+      $_file["product_gpu"]["name"],
+      $_file["product_icon1"]["name"],
+      $_file["product_icon2"]["name"],
+      $_file["product_icon3"]["name"],
+      $_post["icon1des"],
+      $_post["icon2des"],
+      $_post["icon3des"],
+      $_post["description"],
+      $_post["quantity"],
+      $_post["buyPrice"],
+      $_post["price"]
+      ]);
+    }else if (empty($files["product_pics"]["name"]) && empty($_file["product_gpu"]["name"])) {
+      $database = new Database();
+      $database->executeSql("INSERT INTO products (Name, Photo, Horseman, Phone_Left, Screen, Phone_Right, Light, Logo, Gpu, Icon1, Icon2, Icon3, Icon1_Des, Icon2_Des, Icon3_Des, Description, QuantityInStock, BuyPrice, Price)
+      VALUES (?, NULL,?,?,?,?,?,?,NULL,?,?,?,?,?,?,?,?,?,?)", [
+      $_post["name"],
+      $files["product_hors"]["name"],
+      $_file["product_left"]["name"],
+      $_file["product_screen"]["name"],
+      $_file["product_right"]["name"],
+      $_file["product_light"]["name"],
+      $_file["product_logo"]["name"],
+      $_file["product_icon1"]["name"],
+      $_file["product_icon2"]["name"],
+      $_file["product_icon3"]["name"],
+      $_post["icon1des"],
+      $_post["icon2des"],
+      $_post["icon3des"],
+      $_post["description"],
+      $_post["quantity"],
+      $_post["buyPrice"],
+      $_post["price"]
+      ]);
+    }else if (empty($files["product_pics"]["name"]) && empty($_file["product_icon1"]["name"])) {
+      $database = new Database();
+      $database->executeSql("INSERT INTO products (Name, Photo, Horseman, Phone_Left, Screen, Phone_Right, Light, Logo, Gpu, Icon1, Icon2, Icon3, Icon1_Des, Icon2_Des, Icon3_Des, Description, QuantityInStock, BuyPrice, Price)
+      VALUES (?, NULL,?,?,?,?,?,?,?,NULL,?,?,NULL,?,?,?,?,?,?)", [
+      $_post["name"],
+      $files["product_hors"]["name"],
+      $_file["product_left"]["name"],
+      $_file["product_screen"]["name"],
+      $_file["product_right"]["name"],
+      $_file["product_light"]["name"],
+      $_file["product_logo"]["name"],
+      $_file["product_gpu"]["name"],
+      $_file["product_icon2"]["name"],
+      $_file["product_icon3"]["name"],
+      $_post["icon2des"],
+      $_post["icon3des"],
+      $_post["description"],
+      $_post["quantity"],
+      $_post["buyPrice"],
+      $_post["price"]
+      ]);
+    }else if (empty($files["product_pics"]["name"]) && empty($_file["product_icon2"]["name"])) {
+      $database = new Database();
+      $database->executeSql("INSERT INTO products (Name, Photo, Horseman, Phone_Left, Screen, Phone_Right, Light, Logo, Gpu, Icon1, Icon2, Icon3, Icon1_Des, Icon2_Des, Icon3_Des, Description, QuantityInStock, BuyPrice, Price)
+      VALUES (?, NULL,?,?,?,?,?,?,?,?,NULL,?,?,NULL,?,?,?,?,?)", [
+      $_post["name"],
+      $files["product_hors"]["name"],
+      $_file["product_left"]["name"],
+      $_file["product_screen"]["name"],
+      $_file["product_right"]["name"],
+      $_file["product_light"]["name"],
+      $_file["product_logo"]["name"],
+      $_file["product_gpu"]["name"],
+      $_file["product_icon1"]["name"],
+      $_file["product_icon3"]["name"],
+      $_post["icon1des"],
+      $_post["icon3des"],
+      $_post["description"],
+      $_post["quantity"],
+      $_post["buyPrice"],
+      $_post["price"]
+      ]);
+    }else if (empty($files["product_pics"]["name"]) && empty($_file["product_icon3"]["name"])) {
+      $database = new Database();
+      $database->executeSql("INSERT INTO products (Name, Photo, Horseman, Phone_Left, Screen, Phone_Right, Light, Logo, Gpu, Icon1, Icon2, Icon3, Icon1_Des, Icon2_Des, Icon3_Des, Description, QuantityInStock, BuyPrice, Price)
+      VALUES (?, NULL,?,?,?,?,?,?,?,?,?,NULL,?,?,NULL,?,?,?,?)", [
+      $_post["name"],
+      $files["product_hors"]["name"],
+      $_file["product_left"]["name"],
+      $_file["product_screen"]["name"],
+      $_file["product_right"]["name"],
+      $_file["product_light"]["name"],
+      $_file["product_logo"]["name"],
+      $_file["product_gpu"]["name"],
+      $_file["product_icon1"]["name"],
+      $_file["product_icon2"]["name"],
+      $_post["icon1des"],
+      $_post["icon2des"],
+      $_post["description"],
+      $_post["quantity"],
+      $_post["buyPrice"],
+      $_post["price"]
+      ]);
+    }else {

@@ -1,0 +1,71 @@
+/****************************************************************************************/
+/***************************************ADMIN********************************************/
+/****************************************************************************************/
+
+table {
+  background-color: rgba(0, 0, 0, 0.7);
+  text-align: center;
+  color: white;
+  margin-top: 10px;
+}
+
+.container{
+  text-align: center;
+}
+
+.t-order{
+  background-color: rgba(0, 0, 0, 0.7);
+  text-align: center;
+  color: white;
+  margin-left: auto;
+  margin-top: 10px;
+  margin-right: auto;
+}
+
+td, th {
+  width: 30%;
+  margin-right: 20px;
+  padding: 10px;
+}
+
+.tableArtwork td,
+.tableArtwork th{
+  width: 25%;
+}
+
+h2{
+  color: red;
+}
+
+.back,
+.link a{
+  color: white;
+}
+
+.back:hover,
+.link a:hover{
+  color: red;
+}
+
+#planPop a:hover{
+  color: black;
+}
+
+.badge{
+  width: 30px;
+}
+
+/****************************************************************************************/
+/*************************************RESPONSIVE*****************************************/
+/****************************************************************************************/
+
+@media only screen and (max-width:1024px) {
+  td, th {
+    padding: 10px 0;
+  }
+
+  .t-order {
+    font-size: 10px;
+  }
+
+}

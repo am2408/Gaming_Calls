@@ -1,0 +1,27 @@
+<link rel="stylesheet" type="text/css" href="<?= $wwwUrl ?>/css/payment/payment.css">
+<link rel="stylesheet" href="<?= $wwwUrl ?>/css/basket/basket.css">
+
+<main class="container">
+  <h3>Paiement de votre commande</h3>
+  <form action="<?= $requestUrl ?>/payment/charge" method="post" id="payment-form" class="p-form">
+    <input type="hidden" name="orders" id="orders" value="gamingBasket">
+    <div class="form-row">
+
+      <div id="card-element" class="form-control ">
+        <!-- A Stripe Element will be inserted here. -->
+      </div>
+
+      <!-- Used to display form errors. -->
+      <div id="card-errors" role="alert"></div>
+    </div>
+    <button class="sub">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <p>Payer</p>
+    </button>
+  </form>
+</main>
+<script src="https://js.stripe.com/v3/"></script>
+<script src="<?= $wwwUrl ?>/js/charge.js"></script>

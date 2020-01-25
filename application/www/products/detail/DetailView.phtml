@@ -1,0 +1,107 @@
+<link rel="stylesheet" href="<?= $wwwUrl ?>/css/products/detail/detail.css">
+
+<main class="container">
+  <a class="comeBack" href="<?= $requestUrl ?>/products"><i class="fas fa-arrow-circle-left"></i></a>
+  <div class="deviceGame">
+    <?php if ($product['Logo']===NULL) { ?>
+    <?php }else {?>
+      <img class="phone-logo" src="<?= $wwwUrl ?>/images/products/<?=substr($product['Photo'], 0, -4)?>/<?=$product['Logo']?>" alt="logo">
+    <?php } ?>
+    <?php if ($product['Horseman']===NULL) { ?>
+    <?php }else {?>
+      <img class="horseman" src="<?= $wwwUrl ?>/images/products/<?=substr($product['Photo'], 0, -4)?>/<?=$product['Horseman']?>" alt="horseman">
+    <?php } ?>
+    <?php if ($product['Phone_Left']===NULL) { ?>
+    <?php }else {?>
+      <img class="phone1" src="<?= $wwwUrl ?>/images/products/<?=substr($product['Photo'], 0, -4)?>/<?=$product['Phone_Left']?>" alt="phone">
+    <?php } ?>
+    <?php if ($product['Screen']===NULL) { ?>
+    <?php }else {?>
+      <img class="screen" src="<?= $wwwUrl ?>/images/products/<?=substr($product['Photo'], 0, -4)?>/<?=$product['Screen']?>" alt="screen">
+    <?php } ?>
+    <?php if ($product['Phone_Right']===NULL) { ?>
+    <?php }else {?>
+      <img class="phone2" src="<?= $wwwUrl ?>/images/products/<?=substr($product['Photo'], 0, -4)?>/<?=$product['Phone_Right']?>" alt="phone">
+    <?php } ?>
+    <?php if ($product['Light']===NULL) { ?>
+    <?php }else {?>
+      <img class="light" src="<?= $wwwUrl ?>/images/products/<?=substr($product['Photo'], 0, -4)?>/<?=$product['Light']?>" alt="light">
+    <?php } ?>
+  </div>
+  <div class="icons">
+    <div>
+      <img class="icon1" src="<?= $wwwUrl ?>/images/products/<?=substr($product['Photo'], 0, -4)?>/<?=$product['Icon1']?>" alt="icon1">
+      <?php if (strlen($product['Icon1_Des']) >= 20) { ?>
+        <h3><?=substr($product['Icon1_Des'], 0, 20)?><br><?=substr($product['Icon1_Des'], 20)?></h3>
+      <?php } else{ ?>
+        <h3><?=$product['Icon1_Des']?></h3>
+      <?php } ?>
+    </div>
+    <div>
+      <img class="icon2" src="<?= $wwwUrl ?>/images/products/<?=substr($product['Photo'], 0, -4)?>/<?=$product['Icon2']?>" alt="icon2">
+      <?php if (strlen($product['Icon2_Des']) >= 30) { ?>
+        <h3><?=substr($product['Icon2_Des'], 0, 30)?><br><?=substr($product['Icon2_Des'], 30)?></h3>
+      <?php } else{ ?>
+        <h3><?=$product['Icon2_Des']?></h3>
+      <?php } ?>
+    </div>
+    <div>
+      <img class="icon3" src="<?= $wwwUrl ?>/images/products/<?=substr($product['Photo'], 0, -4)?>/<?=$product['Icon3']?>" alt="icon3">
+      <?php if (strlen($product['Icon3_Des']) >= 30) { ?>
+        <h3><?=substr($product['Icon3_Des'], 0, 30)?><br><?=substr($product['Icon3_Des'], 30)?></h3>
+      <?php } else{ ?>
+        <h3><?=$product['Icon3_Des']?></h3>
+      <?php } ?>
+    </div>
+  </div>
+  <div class="productDetail">
+    <?php if ($product['Phone_Left']===NULL) { ?>
+    <?php }else {?>
+      <img class="gpu" src="<?= $wwwUrl ?>/images/products/<?=substr($product['Photo'], 0, -4)?>/<?=$product['Phone_Left']?>" alt="phone">
+    <?php } ?>
+    <?php if ($product['Screen']===NULL) { ?>
+    <?php }else {?>
+      <img class="screen-to-gpu" src="<?= $wwwUrl ?>/images/products/<?=substr($product['Photo'], 0, -4)?>/<?=$product['Screen']?>" alt="screen">
+    <?php } ?>
+    <?php if ($product['Gpu']===NULL) { ?>
+    <?php }else {?>
+      <img class="gpu1" src="<?= $wwwUrl ?>/images/products/<?=substr($product['Photo'], 0, -4)?>/<?=$product['Gpu']?>" alt="GPU">
+    <?php } ?>
+    <p><?=$product['Description']?></p>
+    <div class="paymentPart">
+      <?php if (array_key_exists('role', $_SESSION) === false){ ?>
+        <p>Prix Unitaire : <em><?=$product['Price']?> €</em></p>
+      <?php }else{ ?>
+        <?php if ($_SESSION['role'] === 'pro'){ ?>
+          <p style="text-decoration: line-through; text-decoration-color: red;">Prix Unitaire : <em><?=$product['Price']?> €</em></p>
+          <p>Prix Unitaire : <em><?=$product['Promo']?> €</em></p>
+        <?php }else{ ?>
+          <p>Prix Unitaire : <em><?=$product['Price']?> €</em></p>
+        <?php }} ?>
+        <?php if (array_key_exists('role', $_SESSION) === false){ ?>
+          <p class="paymentPart">Veuillez vous <a href="<?= $requestUrl ?>/users/login">connecter</a> afin de pouvoir accéder à cette fonctionnalité</p>
+        <?php }else{ ?>
+          <form>
+            <input type="text" name="quantity" id="product-<?=$product['Id']?>">
+            <?php if ($_SESSION['role'] === 'pro'){ ?>
+              <button class="addToBasket" data-name="<?=$product['Name']?>" data-price="<?=$product['Promo']?>" data-id="<?=$product['Id']?>">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <p>Ajouter au panier</p>
+              </button>
+            <?php }else{ ?>
+              <button class="addToBasket" data-name="<?=$product['Name']?>" data-price="<?=$product['Price']?>" data-id="<?=$product['Id']?>">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <p>Ajouter au panier</p>
+              </button>
+            <?php } ?>
+          </form>
+        <?php } ?>
+      </div>
+    </div>
+  </main>

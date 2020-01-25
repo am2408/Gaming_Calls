@@ -1,0 +1,143 @@
+/****************************************************************************************/
+/****************************************FONTS*******************************************/
+/****************************************************************************************/
+
+@import url(https://fonts.googleapis.com/css?family=Karla);
+@import url(https://fonts.googleapis.com/css?family=Ubuntu:300);
+
+/****************************************************************************************/
+/*******************************REGISTER AND LOGIN FORM**********************************/
+/****************************************************************************************/
+
+.wrap{
+  color:white;
+  width:400px;
+  font-family:'xoloniumbold', sans-serif;
+  margin:0 auto;
+  text-align:center;
+}
+
+h2{
+  color: red;
+  font-family: evil_empireregular, sans-serif;
+  font-weight: normal;
+  text-align: center;
+}
+
+input{
+  border:0;
+  border-bottom:1px solid #ff5407;
+  width:100%;
+  padding: 10px;
+}
+
+input:focus{
+  outline:none;
+  box-shadow:none;
+  background:#ffeae2;
+}
+
+.login{
+  margin-top: 10px;
+  position: relative;
+  display: inline-block;
+  color: #2196f3;
+  text-transform: uppercase;
+  text-decoration: none;
+  overflow: hidden;
+  transition: 0.2s;
+  border: none;
+  background: rgba(0, 0, 0, 0);
+}
+
+.login:hover{
+  background: #4bddeb;
+  box-shadow: 0 0 10px #2196f3, 0 0 40px #2196f3, 0 0 80px #2196f3;
+  transition-delay: 1s;
+}
+
+.login:hover p{
+  color: #255784;
+  transition-delay: 1s;
+}
+
+.login span{
+  position: absolute;
+  display: block;
+}
+
+.login span:nth-child(1)  {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg,transparent,#2196f3);
+}
+
+.login:hover span:nth-child(1) {
+  left: 100%;
+  transition: 1s;
+}
+
+.login span:nth-child(3) {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg,transparent,#2196f3);
+}
+
+.login:hover span:nth-child(3) {
+  right: 100%;
+  transition: 1s;
+  transition-delay: 0.5s;
+}
+
+.login span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg,transparent,#2196f3);
+}
+
+.login:hover span:nth-child(2) {
+  top: 100%;
+  transition: 1s;
+  transition-delay: 0.25s;
+}
+
+.login span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg,transparent,#2196f3);
+}
+
+.login:hover span:nth-child(4) {
+  bottom: 100%;
+  transition: 1s;
+  transition-delay: 0.75s;
+}
+
+.error{
+  color: red;
+  margin-left:370px;
+  font-style: italic;
+}
+
+/****************************************************************************************/
+/*************************************RESPONSIVE*****************************************/
+/****************************************************************************************/
+
+@media only screen and (max-width:1024px) {
+  .wrap{
+    width: 100%;
+  }
+
+  .error{
+    margin-left: 0;
+  }
+
+}

@@ -1,0 +1,37 @@
+<link rel="stylesheet" href="<?= $wwwUrl ?>/css/users/register.css">
+
+<?php if ($error != null) { ?>
+  <small class="error"><?= $error ?></small>
+<?php } ?>
+<main class="container">
+
+  <h2>Enregistrez vous !</h2>
+  <div class='wrap'>
+    <form action="<?= $requestUrl ?>/users/register" method="POST">
+      <label>Prénom</label>
+      <input type="text" name="firstname">
+      <label>Nom</label>
+      <input type="text" name="lastname">
+      <label>Email</label>
+      <input type="mail" name="email">
+      <label>Pseudo</label>
+      <input type="text" name="pseudo">
+      <label>Votre adresse</label>
+      <input type="text" name="address">
+      <label>Ville</label>
+      <input type="text" name="city">
+      <label>Code postal</label>
+      <input type="text" name="zip">
+      <label>Mot de passe</label>
+      <input type="password" name="password">
+      <button class='login'>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <p>C'est parti !</p>
+      </button>
+    </form>
+  </div>
+
+</main>

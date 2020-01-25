@@ -1,0 +1,24 @@
+<link rel="stylesheet" href="<?= $wwwUrl ?>/css/admin/admin.css">
+<main class="container">
+  <h2>Listes des produits !</h2>
+  <a class="comeBack" href="<?= $requestUrl ?>/users/admin"><i class="fas fa-arrow-circle-left"></i></a>
+  <table class="tableCoke">
+    <tbody>
+      <tr class="titleCoke">
+        <td>Photo</td>
+        <td>Nom</td>
+        <td>Action</td>
+      </tr>
+      <?php foreach ($products as $product):?>
+        <tr>
+          <td class="pCoke"><img src="<?= $wwwUrl?>/images/products/<?=$product['Photo']?>"></td>
+          <td class="nCoke"><?=$product['Name']?></td>
+          <td class="aCoke">
+            <a href="<?= $requestUrl ?>/users/admin/product/update?productId=<?= $product['Id'] ?>"><i class="fas fa-pen"></i></a>
+            <a href="<?= $requestUrl ?>/users/admin/product/delete?productId=<?= $product['Id'] ?>"><i class="fas fa-trash"></i></a>
+          </td>
+        </tr>
+      <?php endforeach;?>
+    </tbody>
+  </table>
+</main>

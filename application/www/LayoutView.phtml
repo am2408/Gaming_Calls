@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="Content-Type" content="text/html" charset="iso-8859-1"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <title>Gaming Calls</title>
+  <link rel="stylesheet" href="<?= $wwwUrl ?>/css/style.css">
+  <script type="text/javascript" src="<?= $wwwUrl ?>/js/jquery-2.1.4.min.js"></script>
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <!-- Feuilles de styles de l'application -->
+  <script src="<?= $wwwUrl ?>/js/classes/Basket.class.js"></script>
+  <!-- Librairie jQuery -->
+  <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+
+  <!-- JavaScript de l'application -->
+  <script src="<?= $wwwUrl ?>/js/utilities.js"></script>
+</head>
+<body id='haut'>
+  <header>
+    <div class="logo">
+      <a href="<?= $requestUrl ?>"><img src="<?=$wwwUrl?>/images/logo/logo.png" alt="back"></a>
+    </div>
+    <ul class="nav-main">
+      <li>
+        <a class='list-item home' href='<?= $requestUrl ?>'>
+          <i class="fas fa-home"></i>
+        </a>
+      </li>
+      <li>
+        <a class='list-item store' href='<?= $requestUrl ?>/products'>
+          <i class="fas fa-store"></i>
+        </a>
+      </li>
+      <?php if (array_key_exists('role', $_SESSION) === false){ ?>
+        <li>
+          <a class='list-item userlog' href='<?= $requestUrl ?>/users/login'>
+            <i class="fas fa-user"></i>
+          </a>
+        </li>
+      <?php }else{ ?>
+        <?php if ($_SESSION['role'] === 'admin'){ ?>
+          <li>
+            <a class='list-item admin' href='<?= $requestUrl ?>/users/admin'>
+              <i class="fas fa-user-shield"></i>
+            </a>
+          </li>
+        <?php } ?>
+        <li>
+          <a class='list-item profil' href='<?= $requestUrl ?>/users/profil'>
+            <i class="fas fa-id-card"></i>
+          </a>
+        </li>
+        <li>
+          <a class='list-item basket' href='<?= $requestUrl ?>/basket'>
+            <i class="fas fa-shopping-basket"></i>
+            <span id='itemBasket' class="simpleCart_total"></span>
+          </a>
+        </li>
+        <li>
+          <a class='list-item' href='<?= $requestUrl ?>/users/logout'>
+            <i class="fas fa-sign-out-alt"></i>
+          </a>
+        </li>
+      <?php } ?>
+    </ul>
+    <ul class="nav-second">
+      <li>
+        <a class='list-item home' href='<?= $requestUrl ?>'>
+          <i class="fas fa-home"></i>
+        </a>
+      </li>
+      <li>
+        <a class='list-item store' href='<?= $requestUrl ?>/products'>
+          <i class="fas fa-store"></i>
+        </a>
+      </li>
+      <?php if (array_key_exists('role', $_SESSION) === false){ ?>
+        <li>
+          <a class='list-item userlog' href='<?= $requestUrl ?>/users/login'>
+            <i class="fas fa-user"></i>
+          </a>
+        </li>
+      <?php }else{ ?>
+        <?php if ($_SESSION['role'] === 'admin'){ ?>
+          <li>
+            <a class='list-item admin' href='<?= $requestUrl ?>/users/admin'>
+              <i class="fas fa-user-shield"></i>
+            </a>
+          </li>
+        <?php } ?>
+        <li>
+          <a class='list-item profil' href='<?= $requestUrl ?>/users/profil'>
+            <i class="fas fa-id-card"></i>
+          </a>
+        </li>
+        <li>
+          <a class='list-item basket' href='<?= $requestUrl ?>/basket'>
+            <i class="fas fa-shopping-basket"></i>
+          </a>
+        </li>
+        <li>
+          <a class='list-item' href='<?= $requestUrl ?>/users/logout'>
+            <i class="fas fa-sign-out-alt"></i>
+          </a>
+        </li>
+      <?php } ?>
+      <li>
+        <a class='list-item' href='https://www.instagram.com/abdoul.m2408/'>
+          <i class="fab fa-instagram"></i>
+        </a>
+      </li>
+      <li>
+        <a class='list-item' href='https://www.facebook.com/profile.php?id=100010979704062'>
+          <i class="fab fa-facebook-f"></i>
+        </a>
+      </li>
+      <li>
+        <a class='list-item' href='https://twitter.com/2408AM'>
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class='list-item' href='#haut'>
+          <i class="fas fa-angle-double-up"></i>
+        </a>
+      </li>
+    </ul>
+    <nav class="nav-bar-mobile">
+      <i class="fas fa-bars" id="burger-button"></i>
+      <div class="nav-column hide">
+        <a class='list-item home' href='<?= $requestUrl ?>'>
+          <i class="fas fa-home"></i>
+        </a>
+        <a class='list-item store' href='<?= $requestUrl ?>/products'>
+          <i class="fas fa-store"></i>
+        </a>
+        <?php if (array_key_exists('role', $_SESSION) === false){ ?>
+          <a class='list-item userlog' href='<?= $requestUrl ?>/users/login'>
+            <i class="fas fa-user"></i>
+          </a>
+        <?php }else{ ?>
+          <?php if ($_SESSION['role'] === 'admin'){ ?>
+            <a class='list-item admin' href='<?= $requestUrl ?>/users/admin'>
+              <i class="fas fa-user-shield"></i>
+            </a>
+          <?php } ?>
+          <a class='list-item profil' href='<?= $requestUrl ?>/users/profil'>
+            <i class="fas fa-id-card"></i>
+          </a>
+          <a class='list-item basket' href='<?= $requestUrl ?>/basket'>
+            <i class="fas fa-shopping-basket"></i>
+          </a>
+          <a class='list-item' href='<?= $requestUrl ?>/users/logout'>
+            <i class="fas fa-sign-out-alt"></i>
+          </a>
+        <?php } ?>
+        <a class='list-item' href='https://www.instagram.com/abdoul.m2408/'>
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a class='list-item' href='https://www.facebook.com/profile.php?id=100010979704062'>
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a class='list-item' href='https://twitter.com/2408AM'>
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a class='list-item' href='#haut'>
+          <i class="fas fa-angle-double-up"></i>
+        </a>
+      </div>
+    </nav>
+  </header>
+  <?php if (array_key_exists('role', $_SESSION) === false){ ?>
+
+  <?php }else if ($_SESSION['role'] === 'pro') { ?>
+    <p style="background: rgba(255,0,0,0.5); margin: 0; text-align: center;">Profitez de -50% sur toutes la boutique !</p>
+  <?php } ?>
+  <?php include $this->viewData['template']; ?>
+  <div id="errorPopUp" class="hide popUp">
+    <p id="closePopUpError" class="closePopUp">X</p><p>
+    </p><h4>Impossible !</h4>
+    <p>Si vous ne rentrez pas un chiffre, on ne peut pas compter !</p>
+    <img src="<?= $wwwUrl?>/images/no.png">
+    <button class="closePopUp">Retour aux achats</button>
+  </div>
+  <div id="productPopUp" class="hide popUp">
+    <p id="closePopUpProduct" class="closePopUp">X</p><p>
+    </p><h4>Félicitation !</h4>
+    <p>Votre produit a été ajouté à votre panier ! (<em id="productNumber"></em> produit(s))</p>
+    <img src="<?= $wwwUrl?>/images/ok.png">
+    <a href="<?= $requestUrl ?>/basket" class="access">Accéder à votre panier</a>
+  </div>
+  <footer class="footer-main" style="text-align:center; padding-top: 90px;">
+    <small style="color: white; font-style: italic;">Copyright (c) 2020 Copyright Holder All Rights Reserved.</small>
+  </footer>
+  <script type="text/javascript" src='<?= $wwwUrl ?>/js/main.js'></script>
+</body>
+</html>

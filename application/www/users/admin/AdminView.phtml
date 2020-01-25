@@ -1,0 +1,51 @@
+<link rel="stylesheet" href="<?= $wwwUrl ?>/css/users/admin.css">
+
+<main class="container">
+  <div class="login-right">
+    <h2>Admin</h2>
+    <div>
+      <hr>
+      <h3>Gestion des produits !</h3>
+      <a href="<?= $requestUrl ?>/users/admin/product/add" class="addProduct"><i class="fas fa-plus-circle"></i> Ajouter un nouveau produit</a>
+      <br>
+      <a href="<?= $requestUrl ?>/users/admin/product">Voir tous les produits</a>
+      <hr>
+      <h3>Gestion des utilisateurs !</h3>
+      <table class="userTable">
+        <tbody>
+          <tr>
+            <td>Nom</td>
+            <td>Prénom</td>
+            <td>Email</td>
+            <td>Role</td>
+            <td>Action</td>
+          </tr>
+          <?php foreach ($users as $user): ?>
+            <?php if($user['Email'] !== $_SESSION['email']) { ?>
+              <tr>
+                <td><?= $user['LastName'] ?></td>
+                <td><?= $user['FirstName']?></td>
+                <td><?= $user['Email'] ?></td>
+                <td> <select class="userRole" data-id="<?=$user['Id']?>">
+                  <?php if ( $user['Role'] === 'pro'){ ?>
+                    <option value="pro" selected>pro</option>
+                    <option value="user">user</option>
+                  <?php }else if($user['Role'] === 'user'){ ?>
+                    <option value="pro">pro</option>
+                    <option value="user" selected>user</option>
+                  <?php } ?>
+                </select></td>
+                <td><a href="<?= $requestUrl ?>/users/admin/user/delete?userId=<?=$user['Id']?>"><i class="fas fa-trash"></i></a></td>
+              </tr>
+            <?php } ?>
+          <?php endforeach; ?>
+        </tbody>
+      </table>
+
+      <hr>
+      <h3>Gestion des commandes !</h3>
+      <a href="<?= $requestUrl ?>/users/admin/order" class="addCoke"><i class="fas fa-plus-circle"></i> Gestion des commandes</a>
+    </div>
+  </div>
+  <script src="<?= $wwwUrl ?>/js/admin.js"></script>
+</main>

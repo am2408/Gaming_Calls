@@ -1,0 +1,304 @@
+/****************************************************************************************/
+/*************************************ANIMATIONS*****************************************/
+/****************************************************************************************/
+
+@keyframes fondu-in-out {
+	0%    { opacity:1; }
+	25%   { opacity:1; }
+	75%   { opacity:0; }
+	100%  { opacity:0; }
+}
+
+@keyframes slideInRight {
+	form {
+		transform: translate3d(0, 0, 0);
+	}
+	to {
+		transform: translate3d(100%, 0, 0);
+	}
+}
+
+/****************************************************************************************/
+/**********************************PRODUCTS DETAILS**************************************/
+/****************************************************************************************/
+
+main,
+p{
+	font-family: xoloniumbold, sans-serif;
+	text-align: justify;
+}
+
+.paymentPart p {
+	text-align: center;
+}
+
+.phone-logo{
+	display: flex;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.horseman{
+	position: absolute;
+	z-index: 1;
+	animation-name: fondu-in-out;
+	animation-timing-function: ease;
+	animation-iteration-count: 1;
+	animation-duration: 5s;
+	animation-direction: reverse;
+}
+
+.screen{
+	position: absolute;
+	top: 490px;
+	animation-name: fondu-in-out;
+	animation-timing-function: ease;
+	animation-iteration-count: 1;
+	animation-duration: 3s;
+	animation-direction: reverse;
+}
+
+.phone1{
+	position: absolute;
+	top: 490px;
+}
+
+.phone2{
+	position: absolute;
+	left: 620px;
+	animation-name: slideInRight;
+	animation-timing-function: ease;
+	animation-iteration-count: 1;
+	animation-duration: 3s;
+	animation-direction: reverse;
+}
+
+.light{
+	position: absolute;
+	left: 620px;
+	animation:fondu-in-out 10s ease infinite alternate-reverse;
+}
+
+.icons{
+	margin-top: 1040px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+
+.icons div {
+	color: white;
+	text-align: center;
+	width: 33%;
+}
+
+.screen-to-gpu{
+	transform: rotate(20deg);
+	position: absolute;
+	bottom: 370px;
+	left: 360px;
+	animation-name: fondu-in-out;
+	animation-timing-function: ease;
+	animation-iteration-count: infinite;
+	animation-duration: 3s;
+	animation-direction: alternate;
+}
+
+.gpu {
+	transform: rotate(20deg);
+	position: absolute;
+	bottom: 370px;
+	left: 360px;
+}
+
+.gpu1{
+	animation-name: fondu-in-out;
+	animation-timing-function: ease;
+	animation-iteration-count: infinite;
+	animation-duration: 3s;
+	animation-direction: alternate-reverse;
+	position: absolute;
+	bottom: 420px;
+	left: 570px;
+}
+
+.deviceGame,
+.productDetail,
+.icons{
+	position: relative;
+}
+
+.productDetail {
+	margin-top: 600px;
+}
+
+.addToBasket{
+	position: relative;
+	display: inline-block;
+	color: #2196f3;
+	text-transform: uppercase;
+	text-decoration: none;
+	overflow: hidden;
+	transition: 0.2s;
+	border: none;
+	background: rgba(0, 0, 0, 0);
+}
+
+.addToBasket:hover{
+	background: #4bddeb;
+	box-shadow: 0 0 10px #2196f3, 0 0 40px #2196f3, 0 0 80px #2196f3;
+	transition-delay: 1s;
+}
+
+.addToBasket:hover p{
+	color: #255784;
+	transition-delay: 1s;
+}
+
+.addToBasket span{
+	position: absolute;
+	display: block;
+}
+
+.addToBasket span:nth-child(1)  {
+	top: 0;
+	left: -100%;
+	width: 100%;
+	height: 2px;
+	background: linear-gradient(90deg,transparent,#2196f3);
+}
+
+.addToBasket:hover span:nth-child(1) {
+	left: 100%;
+	transition: 1s;
+}
+
+.addToBasket span:nth-child(3) {
+	bottom: 0;
+	right: -100%;
+	width: 100%;
+	height: 2px;
+	background: linear-gradient(270deg,transparent,#2196f3);
+}
+
+.addToBasket:hover span:nth-child(3) {
+	right: 100%;
+	transition: 1s;
+	transition-delay: 0.5s;
+}
+
+.addToBasket span:nth-child(2) {
+	top: -100%;
+	right: 0;
+	width: 2px;
+	height: 100%;
+	background: linear-gradient(180deg,transparent,#2196f3);
+}
+
+.addToBasket:hover span:nth-child(2) {
+	top: 100%;
+	transition: 1s;
+	transition-delay: 0.25s;
+}
+
+.addToBasket span:nth-child(4) {
+	bottom: -100%;
+	left: 0;
+	width: 2px;
+	height: 100%;
+	background: linear-gradient(360deg,transparent,#2196f3);
+}
+
+.addToBasket:hover span:nth-child(4) {
+	bottom: 100%;
+	transition: 1s;
+	transition-delay: 0.75s;
+}
+
+.paymentPart{
+	text-align: center;
+}
+
+.paymentPart span{
+	color: white;
+}
+
+.paymentPart span em{
+	color: red;
+}
+
+form{
+	margin-top: 10px;
+}
+
+/****************************************************************************************/
+/*************************************RESPONSIVE*****************************************/
+/****************************************************************************************/
+
+@media (max-width:1700px) {
+
+	.horseman,
+	.phone1,
+	.screen,
+	.phone2,
+	.light{
+		width: 35%;
+	}
+
+	.screen-to-gpu,
+	.gpu,
+	.gpu1{
+		display: none;
+	}
+
+	.icons{
+		margin-top: 700px;
+	}
+
+	.productDetail{
+		margin-top: 0;
+	}
+}
+
+
+@media (max-width:1440px) {
+	.horseman,
+	.phone1{
+		position: relative;
+		top: 0;
+		display: flex;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.phone2,
+	.gpu1,
+	.gpu,
+	.screen-to-gpu,
+	.screen,
+	.light{
+		display: none;
+	}
+
+	.icons,
+	.productDetail{
+		margin-top: 0;
+	}
+}
+
+
+@media only screen and (max-width:1024px) {
+
+	.icons,
+	.screen-to-gpu,
+	.gpu,
+	.gpu1,
+	.horseman,
+	.phone1,
+	.screen,
+	.phone2,
+	.light{
+		display: none;
+	}
+
+}

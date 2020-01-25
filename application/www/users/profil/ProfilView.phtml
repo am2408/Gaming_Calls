@@ -1,0 +1,71 @@
+<link rel="stylesheet" href="<?= $wwwUrl ?>/css/users/register.css">
+<link rel="stylesheet" type="text/css" href="<?= $wwwUrl ?>/css/admin/admin.css">
+
+
+<main class="container">
+  <?php if ($_SESSION['role'] === 'pro'){ ?>
+    <h2>Votre Profil <img src="<?=$wwwUrl?>/images/logo/pro.png" alt="pro" class="badge"></h2>
+  <?php }else{ ?>
+    <h2>Votre Profil</h2>
+  <?php } ?>
+  <div class='wrap'>
+    <form action="<?= $requestUrl ?>/users/profil" method="POST">
+      <h4>Votre prénom :</h4>
+      <input type="text" name="firstname" placeholder="Prénom" value="<?= $_SESSION['firstName'] ?>">
+      <h4>Votre nom :</h4>
+      <input type="text" name="lastname" placeholder="Nom" value="<?= $_SESSION['lastName'] ?>">
+      <h4>Votre email :</h4>
+      <input type="text" name="email" placeholder="email" value="<?= $_SESSION['email'] ?>">
+      <h4>Votre pseudo :</h4>
+      <input type="text" name="pseudo" placeholder="Pseudo" value="<?= $_SESSION['pseudo'] ?>">
+      <h4>Votre adresse :</h4>
+      <input type="text" name="address" placeholder="Adresse" value="<?= $_SESSION['address'] ?>">
+      <h4>Votre ville :</h4>
+      <input type="text" name="city" placeholder="Ville" value="<?= $_SESSION['city'] ?>">
+      <h4>Votre code postal :</h4>
+      <input type="text" name="zip" placeholder="Code postal" value="<?= $_SESSION['zip'] ?>">
+      <button class='login'>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <p>Modifier !</p>
+      </button>
+    </form>
+    <?php if ($_SESSION['role'] === 'pro'){ ?>
+      <button class='login'>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <p class="role" data-role="user">Arrêter votre abonnement !</p>
+      </button>
+    <?php }else{} ?>
+  </div>
+  <hr>
+
+  <h2>Récapitulatif des commandes</h2>
+  <p>Cliquez sur un numéro de commande pour voir le détail !</p>
+  <table class="t-order">
+    <thead>
+      <tr><th>Numéro de commande</th>
+        <th>Prix total</th>
+        <th>Date de la commande</th>
+      </tr></thead>
+      <tbody>
+        <?php foreach ($orders as $order): ?>
+          <tr>
+            <td class='link'><a href="<?= $requestUrl ?>/users/profil/userorder?id=<?=$order['Id']?>"><?=$order['Id']?></a></td>
+            <td><?=$order['TotalAmount']?> €</td>
+            <td><?=date('d/m/Y', strtotime($order['CreationTimestamp']))?></td>
+          </tr>
+        <?php endforeach; ?>
+      </tbody>
+    </table>
+    <div id="planPop" class="hide popUp">
+    </p><h4>Fin de votre abonnement !</h4>
+    <p>Votre demande a bien été prise en compte ! Afin que cela fasse effet, veuillez vous reconnecter.</p>
+    <a href="<?= $requestUrl?>/users/profil/role"class="access">Compris !</a>
+  </div>
+  <script src="<?= $wwwUrl ?>/js/profil.js"></script>
+</main>

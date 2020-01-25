@@ -1,0 +1,58 @@
+<link rel="stylesheet" href="<?= $wwwUrl ?>/css/users/admin.css">
+<link rel="stylesheet" href="<?= $wwwUrl ?>/css/users/update.css">
+
+<main class="container">
+
+  <h2 style="text-align: center;">Ajouter le produit !</h2>
+  <small>PS: DANS PARTIE "IMAGE D'ILLUSTRATION", VEUILLEZ METTRE QUE LES PHOTOS QUE VOUS AVEZ ! <br></small>
+
+  <a class="comeBack" href="<?= $requestUrl ?>/users/admin"><i class="fas fa-arrow-circle-left"></i></a>
+
+  <form class="b-form" action="<?= $requestUrl ?>/users/admin/product/add" method="POST" enctype="multipart/form-data">
+    <h4>Nom du produit:</h4>
+    <input type="text" name="name" placeholder="Nom du produit" value="">
+    <hr>
+    <h3>Image d'illustration :</h3>
+    <h4>Image du produit:</h4>
+    <input type="file" name="product_pics">
+    <h4>Image du "Horseman":</h4>
+    <input type="file" name="product_hors">
+    <h4>Image du "Phone Left":</h4>
+    <input type="file" name="product_left">
+    <h4>Image du "Phone Right":</h4>
+    <input type="file" name="product_right">
+    <h4>Image du "Screen":</h4>
+    <input type="file" name="product_screen">
+    <h4>Image de "Light":</h4>
+    <input type="file" name="product_light">
+    <h4>Image du "Logo":</h4>
+    <input type="file" name="product_logo">
+    <h4>Image du "Gpu":</h4>
+    <input type="file" name="product_gpu">
+    <h4>Image du "Icon 1":</h4>
+    <input type="file" name="product_icon1">
+    <textarea type="text" name="icon1des" maxlength="1000">Description du "Icon 1"</textarea>
+    <h4>Image du "Icon 2":</h4>
+    <input type="file" name="product_icon2">
+    <textarea type="text" name="icon2des" maxlength="1000">Description du "Icon 2"</textarea>
+    <h4>Image du "Icon 3":</h4>
+    <input type="file" name="product_icon3">
+    <textarea type="text" name="icon3des" maxlength="1000">Description du "Icon 3"</textarea>
+    <hr>
+    <h4>Description du produit:</h4>
+    <textarea type="text" name="description" maxlength="1000">Description du produit</textarea>
+    <h4>Quantité:</h4>
+    <input type="text" name="quantity" placeholder="Quantité" value="">
+    <h4>Prix d'achat:</h4>
+    <input type="text" name="buyPrice" placeholder="Prix d'achat" value="">
+    <h4>Prix du produit:</h4>
+    <input type="text" name="price" placeholder="Prix du produit" value="">
+    <button class="sub" type="submit" name="Enregister">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <p>Valider</p>
+    </button>
+  </form>
+</main>

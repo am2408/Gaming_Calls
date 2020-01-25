@@ -1,0 +1,28 @@
+<main class="container">
+  <?php if (array_key_exists('role', $_SESSION) === false){ ?>
+
+  <?php }else{ ?>
+    <p>Bienvenue sur mon site <?= $_SESSION['pseudo'] ?> !</p>
+  <?php } ?>
+  <p>Vous êtes &agrave; la recherche d'un portable gamer puissant mais vous ne savez pas sur quoi vous baser. Ce site est fait pour vous ! J'ai créé ce site afin de vous montrer quels sont les principaux points à regarder avant d'acheter un portable gamer.</p>
+  <p>Commençons sans plus tarder !</p>
+  <section class="points">
+    <article class="cara">
+      <h2>Puissance du processeur</h2>
+      <p>Le processeur de l'appareil doit jouer un rôle très important dans votre choix. Le processeur est le moteur de nos Android. L'unité de mesure est le GigaHertz (GHz), un multiple de la fréquence Hertz égale à 1.000.000.000 d'Hertz ce qui signifie que le processus traite toute cette quantité d'hertz en 1 seconde. Le GigaHertz nous permet de déterminer la vitesse à laquelle vos instructions et vos données sont comprises et traitées. Aujourd'hui, la plupart des smartphones sont livrés avec un processeur dualcore ou quadcore. La plupart des gens pensent que plus l'on a de noyaux, de coeurs, plus le téléphone est rapide. Mais ce n'est pas le cas ! Les noyaux sont en fait utilisés pour effectuer différentes tâches simultanément, pas plus rapidement.</p>
+    </article>
+    <article class="cara">
+      <h2>Autonomie</h2>
+      <p>Passons maintenant à l'autonomie. L’autonomie est devenu un facteur important dans le choix d’un appareil. Plus l’autonomie est bonne, plus votre appareil tiendra longtemps avant de devoir le recharger. Pensez donc à bien regarder l'autonomie du produit avant de l'acheter si vous voulez pas que votre appareil s'éteigne en pleine partie de Call Of Duty Mobile :P</p>
+    </article>
+    <article class="cara">
+      <h2>Connectivite</h2>
+      <p>Vous vous êtes sûrement déjà demandé "Pourquoi je lag sur mon portable et pas sur mon PC !". Et bah sachez que cela vient de la connectivité de votre appareil. La connectivité est la capacité d’établir une connexion: une communication, un lien. Le concept se réfère généralement à la disponibilité d’un appareil à connecter à un autre appareil ou réseau. Dans le domaine de l’informatique, la connectivité d’un ordinateur est donnée par sa capacité à se connecter à un réseau tel qu’Internet ou d’autres ordinateurs et périphériques. Un ordinateur peut par exemple avoir une connexion Wi-Fi, USB, PS/2 et FireWire: cela signifie que l’ordinateur en question peut être connecté via ces technologies. L’idée de connectivité sans fil renvoie aux communications qui sont établies sans câbles. De cette façon, l’émetteur et le récepteur ne sont pas reliés par un support physique, mais attirent plutôt les ondes qui traversent l’espace. Un téléphone mobile, par exemple, peut être connecté à un autre téléphone mobile via la technologie Bluetooth. Compris ? :)</p>
+    </article>
+    <article class="cara">
+      <h2>RAM</h2>
+      <p>Et enfin la RAM ! Présente dans un ordinateur comme dans un téléphone mobile, la RAM est le terme anglais pour désigner la mémoire vive. Cette mémoire est disponible uniquement lorsque votre appareil est sous tension. Une fois éteint, cette mémoire vive s'efface. C'est la RAM qui vous permet d'utiliser vos applications. Plus votre téléphone est plein et plus vous avez du mal à accéder aux applications. Lorsque votre smartphone est lent, qu'il répond moins bien, cela signifie que votre mémoire vive est saturée : vous avez trop d'applications ouvertes en même temps.</p>
+    </article>
+  </section>
+  <p>Vous pouvez consulter <a href="<?=$requestUrl?>/products">nos produits</a> spécialement gamer ! Bon shopping !</p>
+</main>

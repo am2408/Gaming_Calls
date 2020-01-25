@@ -1,0 +1,157 @@
+/****************************************************************************************/
+/***********************************UPDATE PRODUCT***************************************/
+/****************************************************************************************/
+
+main.container {
+  margin-top: 100px;
+}
+
+.comeBack {
+  background-color: rgba(0, 0, 0, 0);
+  color: #fda30e;
+  padding: 5px;
+  font-size: 1.5rem;
+  border-radius: 0;
+}
+
+.comeBack:hover{
+  background: none;
+  border-radius: 0;
+}
+
+form.b-form {
+  margin-top: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+input,
+textarea {
+  margin-bottom: 20px;
+  width: 30%;
+  border: none;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+}
+
+input[type="text"],
+textarea {
+  padding: 5px;
+}
+
+input[type="file"] {
+  background: none;
+}
+
+::placeholder{
+  color: white;
+}
+
+input[type="submit"] {
+  background-color: #fda30e;
+  align-self: center;
+  width: auto;
+  padding: 5px 10px;
+}
+
+
+input[type="submit"]:hover {
+  transform: scale(1.2);
+  color: black;
+}
+
+select{
+  margin-bottom: 20px;
+  color: white;
+  background: #fda30e;
+  margin-right: 235px;
+}
+
+hr{
+  width: 90%;
+}
+
+.sub{
+  position: relative;
+  display: inline-block;
+  color: #2196f3;
+  text-transform: uppercase;
+  text-decoration: none;
+  overflow: hidden;
+  transition: 0.2s;
+  border: none;
+  background: rgba(0, 0, 0, 0);
+}
+
+.sub:hover{
+  background: #4bddeb;
+  box-shadow: 0 0 10px #2196f3, 0 0 40px #2196f3, 0 0 80px #2196f3;
+  transition-delay: 1s;
+}
+
+.sub:hover p{
+  color: #255784;
+  transition-delay: 1s;
+}
+
+.sub span{
+  position: absolute;
+  display: block;
+}
+
+.sub span:nth-child(1)  {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg,transparent,#2196f3);
+}
+
+.sub:hover span:nth-child(1) {
+  left: 100%;
+  transition: 1s;
+}
+
+.sub span:nth-child(3) {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg,transparent,#2196f3);
+}
+
+.sub:hover span:nth-child(3) {
+  right: 100%;
+  transition: 1s;
+  transition-delay: 0.5s;
+}
+
+.sub span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg,transparent,#2196f3);
+}
+
+.sub:hover span:nth-child(2) {
+  top: 100%;
+  transition: 1s;
+  transition-delay: 0.25s;
+}
+
+.sub span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg,transparent,#2196f3);
+}
+
+.sub:hover span:nth-child(4) {
+  bottom: 100%;
+  transition: 1s;
+  transition-delay: 0.75s;
+}

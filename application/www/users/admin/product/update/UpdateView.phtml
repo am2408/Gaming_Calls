@@ -1,0 +1,39 @@
+<link rel="stylesheet" href="<?= $wwwUrl ?>/css/users/admin.css">
+<link rel="stylesheet" href="<?= $wwwUrl ?>/css/users/update.css">
+
+<main class="container">
+
+  <h2 style="text-align: center;">Modifiez le produit !</h2>
+  <a class="comeBack" href="<?= $requestUrl ?>/users/admin/product"><i class="fas fa-arrow-circle-left"></i></a>
+
+  <form class="b-form" action="<?= $requestUrl ?>/users/admin/product/update" method="POST" enctype="multipart/form-data">
+    <h4>Nom du produit:</h4>
+    <input type="text" name="name" placeholder="<?= $product['Name'] ?>" value="<?= $product['Name'] ?>">
+    <hr>
+    <h4>Image du produit:</h4>
+    <input type="file" name="product_pics">
+    <h4>Icone 1 Description:</h4>
+    <textarea type="text" name="icon1des" maxlength="1000"><?= $product['Icon1_Des'] ?></textarea>
+    <h4>Icone 2 Description:</h4>
+    <textarea type="text" name="icon2des" maxlength="1000"><?= $product['Icon2_Des'] ?></textarea>
+    <h4>Icone 3 Description:</h4>
+    <textarea type="text" name="icon3des" maxlength="1000"><?= $product['Icon3_Des'] ?></textarea>
+    <hr>
+    <h4>Description du produit:</h4>
+    <textarea type="text" name="description" maxlength="1000"><?= $product['Description'] ?></textarea>
+    <h4>Quantité:</h4>
+    <input type="text" name="quantity" placeholder="<?= $product['QuantityInStock'] ?>" value="<?= $product['QuantityInStock'] ?>">
+    <h4>Prix d'achat:</h4>
+    <input type="text" name="buyPrice" placeholder="<?= $product['BuyPrice'] ?>" value="<?= $product['BuyPrice'] ?>">
+    <h4>Prix du produit:</h4>
+    <input type="text" name="price" placeholder="<?= $product['Price'] ?>" value="<?= $product['Price'] ?>">
+    <input type="hidden" name="productId" value="<?=$product['Id']?>">
+    <button class="sub" type="submit" name="Enregister">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <p>Modifier</p>
+    </button>
+  </form>
+</main>

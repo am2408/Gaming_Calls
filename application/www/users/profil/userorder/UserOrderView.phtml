@@ -1,0 +1,22 @@
+<link rel="stylesheet" type="text/css" href="<?= $wwwUrl ?>/css/admin/admin.css">
+<main class="container">
+  <h2>Détails de votre commande n°<?= $_GET['id'] ?></h2>
+  <a class="back" href="<?= $requestUrl ?>/users/profil"><i class="fas fa-arrow-circle-left"></i> Retour vers profil</a>
+  <table class="t-order">
+    <thead>
+      <tr>
+        <th>Nom du produit</th>
+        <th>Prix du produit</th>
+        <th>Date de la commande</th>
+      </tr></thead>
+      <tbody>
+        <?php foreach ($orders as $order): ?>
+          <tr>
+            <td><?=$order['Name']?></td>
+            <td><?=$order['PriceEach']?> €</td>
+            <td><?=date('d/m/Y à H:i:s', strtotime($order['CreationTimestamp']))?></td>
+          </tr>
+        <?php endforeach; ?>
+      </tbody>
+  </table>
+</main>
